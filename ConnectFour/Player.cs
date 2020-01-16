@@ -6,7 +6,7 @@ namespace ConnectFour
 {
     class Player
     {
-        public string Name { get; set; }
+        public string Name { get; set; } = "";
         public char Symbol { get; set; }
         public int Turns { get; set; }
 
@@ -18,8 +18,6 @@ namespace ConnectFour
 
         public void GetPlayerName()
         {
-            Name = "";
-            while (Name == "")
             {
                 Console.Write("Please Enter Your Name: ");
                 Name = Console.ReadLine();
