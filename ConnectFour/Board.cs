@@ -7,6 +7,7 @@ namespace ConnectFour
 {
     class Board
     {
+        public static bool Winner = false;
         public static int NUM_TO_WIN = 4;
         public static int ROWS = 6;
         public static int COLS = 7;
@@ -41,12 +42,14 @@ namespace ConnectFour
             }
         }
 
-        private bool IsValidMove(int col) => GameBoard[0, col] == '*' ? true : false;
+        public bool IsValidMove(int col) => GameBoard[0, col] == '*' ? true : false;
 
-        private void Update(char symbol, int col)
+        public void Update(char symbol, int col)
         {
             int nextSpaceRow = FindNextAvailable(col);
             GameBoard[nextSpaceRow, col] = symbol;
+            Winner = HasWinner(nextSpaceRow, col);
+            Display();
         }
 
         private int FindNextAvailable(int col)
