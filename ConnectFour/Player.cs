@@ -10,10 +10,20 @@ namespace ConnectFour
         public char Symbol { get; set; }
         public int Turns { get; set; }
 
-        public Player(string name, char symbol)
+        public Player(char symbol)
         {
-            Name = name;
+            GetPlayerName();
             Symbol = symbol;
+        }
+
+        public void GetPlayerName()
+        {
+            Name = "";
+            while (Name == "")
+            {
+                Console.Write("Please Enter Your Name: ");
+                Name = Console.ReadLine();
+            }
         }
     }
 }
