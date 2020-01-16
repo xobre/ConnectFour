@@ -6,7 +6,7 @@ namespace ConnectFour
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Board b = new Board();
         }
     }
 }
